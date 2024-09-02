@@ -12,7 +12,6 @@ public class setUp implements ITestListener {
 
     public void onStart(ITestContext context) {
         String reportName = ExtentReportUtils.getReportNameWithTimeStamp();
-        System.out.println("aaagya");
         String fullReportPath = System.getProperty("user.dir") + "/reports/" + reportName;
         extentReport = ExtentReportUtils.createInstance(fullReportPath,reportName, "Test Execution Results");
     }
@@ -26,7 +25,7 @@ public class setUp implements ITestListener {
     }
 
     public void onTestStart(ITestResult result) {
-        ExtentTest test = extentReport.createTest("Test name " + result.getMethod().getMethodName());
+        ExtentTest test = extentReport.createTest(result.getMethod().getMethodName());
         extentTest.set(test);
     }
 
@@ -34,4 +33,5 @@ public class setUp implements ITestListener {
     public void onTestFailure(ITestResult result) {
         ExtentReportUtils.logFailureDetails(result.getThrowable().getMessage());
     }
+
 }

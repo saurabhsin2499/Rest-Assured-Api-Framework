@@ -26,7 +26,8 @@ public class restUtils {
 
     private static void printRequestLogInReport(RequestSpecification requestSpecification){
         QueryableRequestSpecification queryableRequestSpecification   = SpecificationQuerier.query(requestSpecification);
-        ExtentReportUtils.logInfoDetails("End point "+queryableRequestSpecification.getBaseUri());
+        ExtentReportUtils.logNewAPICALLDetails("============================================ NEW API CALL =============================================================");
+        ExtentReportUtils.logInfoDetails(queryableRequestSpecification.getBaseUri());
         ExtentReportUtils.logInfoDetails("Body or Payload");
         ExtentReportUtils.logJSON(queryableRequestSpecification.getBody());
         ExtentReportUtils.logInfoDetails("Method "+queryableRequestSpecification.getMethod());

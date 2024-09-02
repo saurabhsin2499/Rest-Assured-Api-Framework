@@ -6,7 +6,7 @@
     </listeners>
     <test name="MyTest">
         <classes>
-            <class name="apiTestClasses.DummyCartApiTest"/>
+            <class name="apiTestClasses.sign_up_New_Test_Lead"/>
         </classes>
     </test>
 </suite>

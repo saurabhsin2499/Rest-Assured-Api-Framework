@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" parallel="classes" thread-count="2">
+    <listeners>
+        <listener class-name="reporting.setUp">
+        </listener>
+    </listeners>
+    <test name="Regression Test">
+        <groups>
+            <run>
+                <include name="Regression"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="apiTestClasses.DummyCartApiTest"/>
+            <class name="apiTestClasses.sign_up_New_Test_Lead"/>
+        </classes>
+    </test>
+</suite>

@@ -47,5 +47,23 @@ public class RandomDataGenerator {
         return arr.stream().findAny().get();
     }
 
+    public static String getRandomPhoneNumber() {
+        return faker.phoneNumber().phoneNumberNational();
+    }
+
+    public static String getRandomTestingPhoneNumber() {
+        return "2020" + faker.number().randomNumber(6,true);
+    }
+
+    public static String getRandomCountryCode() {
+        return "+91";
+    }
+
+    public static String getRandomEmail() {
+        return faker.internet().emailAddress();
+    }
+
+
+
 
 }

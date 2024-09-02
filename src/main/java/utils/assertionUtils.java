@@ -18,7 +18,6 @@ public class assertionUtils {
             if(actualValue.isPresent()){
                 Object value = actualValue.get();
                 if(value.equals(expectedValue.get(jsonpath))){
-                    System.out.println(jsonpath+"=="+expectedValue.get(jsonpath)+"=="+value);
                     actualValueMap.add(new assertionKeys(jsonpath,expectedValue.get(jsonpath),value,"Matched"));
                 }
                 else{
@@ -37,7 +36,6 @@ public class assertionUtils {
         else{
             ExtentReportUtils.logFailureDetails("Some Assertion Failed") ;
         }
-        System.out.println(actualValueMap);
         String[][] result = actualValueMap.stream().map(assertionKeys-> new String[] {assertionKeys.getJsonpath(),  (String) assertionKeys.getExpectedValue(),assertionKeys.getActualValue(),assertionKeys.getAssertionResult()}).toArray(String[][] :: new);
         extentTest.get().info(MarkupHelper.createTable(result));
 

@@ -6,7 +6,6 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import groovyjarjarantlr4.v4.codegen.model.decl.CodeBlock;
 import io.restassured.http.Header;
 
 import java.time.LocalDateTime;
@@ -44,7 +43,16 @@ public class ExtentReportUtils extends  setUp{
     }
 
     public static void logInfoDetails(String logs){
-        extentTest.get().info(MarkupHelper.createLabel(logs, ExtentColor.GREY));
+        extentTest.get().info(MarkupHelper.createLabel(logs, ExtentColor.TEAL));
+    }
+
+    public static void logNewAPICALLDetails(String logs){
+        extentTest.get().info(MarkupHelper.createLabel(logs, ExtentColor.PURPLE));
+    }
+
+    public static void logErrorDetails(String logs){
+        extentTest.get().info(MarkupHelper.createLabel("Exception Found",ExtentColor.RED));
+        extentTest.get().info(new RuntimeException(logs));
     }
  
     public static void logWarningDetails(String logs){

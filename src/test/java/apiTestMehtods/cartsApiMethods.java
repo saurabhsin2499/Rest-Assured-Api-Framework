@@ -1,4 +1,4 @@
-package apiTestClasses;
+package apiTestMehtods;
 import io.restassured.response.Response;
 
 import org.json.simple.JSONObject;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static utils.assertionUtils.assertValueWithJsonPath;
 
-public class CartMethods extends RandomDataGenerator {
+public class cartsApiMethods extends RandomDataGenerator {
 
     public static JSONObject getPayloadForRequest(){
         JSONObject payload = new JSONObject();
